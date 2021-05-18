@@ -1,0 +1,42 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Pipeline
+metadata:
+  name: samplepl
+spec:
+  params:
+    - name: image-scan
+
+    - name: pull_image
+  workspaces:
+  - name: workspace
+
+  tasks:
+  - name: vulnerable-image
+    workspaces: 
+    - name: source
+      workspace: workspace
+    taskRef:
+      name: vulnerable-image
+    
+    params:
+      - name: testimage
+        value: $(params.testimage)
+    
+    
+  - name: scan-image
+    
+    taskRef:
+        name: scan-image
+    workspaces: 
+      - name: source
+        workspace: workspace
+    params:
+      - name: image-scan
+        value: $(params.image-scan)
+    
+
+
+  
+  
+   
+      

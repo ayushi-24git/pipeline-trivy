@@ -1,0 +1,20 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: sampleplrun
+spec:
+  pipelineRef:
+    name: samplepl
+  
+  workspaces:
+  - name: workspace
+    persistentvolumeclaim:
+      claimName: trivypvc
+
+  params:
+  - name: testimage
+    value: docker.io/vulnerables/web-dvwa:1.9
+
+  - name: image-scan
+    value: docker.io/vulnerables/web-dvwa:1.9  
+  
