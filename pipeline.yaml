@@ -6,7 +6,7 @@ spec:
   params:
     - name: image-scan
 
-    - name: pull_image
+    - name: testimage
   workspaces:
   - name: workspace
 
@@ -20,7 +20,7 @@ spec:
     
     params:
       - name: testimage
-        value: $(params.testimage)
+        value: $(params.image-scan)
     
     
   - name: scan-image
