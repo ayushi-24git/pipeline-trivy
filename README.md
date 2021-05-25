@@ -7,6 +7,7 @@ This repository demonstrates Trivy, a vulnerability management tool for images a
 
 The repo contains two tasks. Vulnerable-image pulls a sample image from Dockerhub, which is vulnerable. Task scan-image scans that pulled image through Trivy tool.
 
+If you have **minikube** on your laptop, do a `minikube start` and run the following commands:
 
 <h2>Installing the tasks</h2>  
 
