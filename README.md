@@ -9,14 +9,14 @@ The repo contains two tasks. Vulnerable-image pulls a sample image from Dockerhu
 
 
 <h2>Installing the tasks</h2>
-  kubectl apply -f https://raw.githubusercontent.com/ayushi-24git/pipeline-trivy/main/tasks/vulnerable-image.yaml  
+  `<kubectl apply -f https://raw.githubusercontent.com/ayushi-24git/pipeline-trivy/main/tasks/vulnerable-image.yaml>`  
   
-  kubectl apply -f https://raw.githubusercontent.com/ayushi-24git/pipeline-trivy/main/tasks/scan-image.yaml  
+  `<kubectl apply -f https://raw.githubusercontent.com/ayushi-24git/pipeline-trivy/main/tasks/scan-image.yaml>`  
   
-<br\><br\>
+
 
 <h2>Applying pipeline yamls</h2>
-  kubectl apply -f https://raw.githubusercontent.com/ayushi-24git/pipeline-trivy/main/pipeline.yaml  
+  `<kubectl apply -f https://raw.githubusercontent.com/ayushi-24git/pipeline-trivy/main/pipeline.yaml>`  
   
-  kubectl apply -f https://raw.githubusercontent.com/ayushi-24git/pipeline-trivy/main/pipelinerun.yaml  
+  `<kubectl apply -f https://raw.githubusercontent.com/ayushi-24git/pipeline-trivy/main/pipelinerun.yaml>`  
   
