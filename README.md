@@ -26,3 +26,5 @@ If you have **minikube** on your laptop, do a `minikube start` and run the follo
   
   `kubectl apply -f https://raw.githubusercontent.com/ayushi-24git/pipeline-trivy/main/pipelinerun.yaml`  
   
+After applying the above, you can start the Tekton pipeline by running `tkn pipeline start foo`, where foo is the name of your pipeline.
+  
