@@ -1,0 +1,4 @@
+ - name: image-scan2
+      type: string
+      description: image to be scanned.
+      default: ""
