@@ -4,7 +4,8 @@ metadata:
   name: samplepl
 spec:
   params:
-    - name: image-scan
+    - name: image-scan1
+    - name: image-scan2
 
     
   workspaces:
@@ -12,16 +13,27 @@ spec:
 
   tasks:
       
-  - name: scan-image
+  - name: scan-image1
     
     taskRef:
-      name: scan-image
+      name: scan-image1
     workspaces: 
       - name: source
         workspace: workspace
     params:
-      - name: image-scan
-        value: $(params.image-scan)
+      - name: image-scan1
+        value: $(params.image-scan1)
+        
+  - name: scan-image2
+    
+    taskRef:
+      name: scan-image2
+    workspaces: 
+      - name: source
+        workspace: workspace
+    params:
+      - name: image-scan2
+        value: $(params.image-scan2)
     
 
 
