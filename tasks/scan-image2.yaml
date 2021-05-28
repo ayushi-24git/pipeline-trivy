@@ -25,4 +25,4 @@ spec:
       image: aquasec/trivy:0.16.0
       workingDir: $(workspaces.source.path)
       script:  |
-        trivy image $(params.image-scan1)
+        trivy image $(params.image-scan2)
