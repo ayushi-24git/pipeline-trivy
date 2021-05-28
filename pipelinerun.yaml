@@ -13,8 +13,8 @@ spec:
 
   params:
   - name: testimage
-    value: docker.io/vulnerables/web-dvwa:1.9
+    value: vulnerables/web-dvwa:1.9
 
   - name: image-scan
-    value: docker.io/vulnerables/web-dvwa:1.9  
+    value: vulnerables/web-dvwa:1.9  
   
