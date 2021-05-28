@@ -23,7 +23,7 @@ spec:
       image: docker.io/vulnerables/web-dvwa:1.9
       workingDir: $(workspaces.source.path)
       script:  |
-        docker pull $(params.testimage)
+        podman pull $(params.testimage)
 
 
 
