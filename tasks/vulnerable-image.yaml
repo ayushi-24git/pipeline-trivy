@@ -20,10 +20,9 @@ spec:
 
   steps:
     - name: pull-image
-      image: docker.io/vulnerables/web-dvwa:1.9
       workingDir: $(workspaces.source.path)
       script:  |
-        sudo docker pull $(params.testimage)
+        docker pull $(params.testimage)
 
 
 
