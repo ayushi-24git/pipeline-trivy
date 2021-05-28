@@ -3,7 +3,7 @@ apiVersion: tekton.dev/v1beta1
 kind: Task
 
 metadata:
-  name: scan-image
+  name: scan-image1
 
 spec:
   description: This task is for image scanning.
@@ -18,10 +18,7 @@ spec:
       description: image to be scanned.
       default: ""
      
-    - name: image-scan2
-      type: string
-      description: image to be scanned.
-      default: ""
+   
 
   steps:
     - name: scan-image-step1
@@ -30,9 +27,5 @@ spec:
       script:  |
         trivy image $(params.image-scan1)
         
-    - name: scan-image-step2
-      image: aquasec/trivy:0.16.0
-      workingDir: $(workspaces.source.path)
-      script:  |
-        trivy image $(params.image-scan2)
+    
     
