@@ -12,9 +12,7 @@ spec:
       claimName: trivypvc
 
   params:
-  - name: testimage
-    value: vulnerables/web-dvwa:1.9
-
+  
   - name: image-scan
     value: vulnerables/web-dvwa:1.9  
   
