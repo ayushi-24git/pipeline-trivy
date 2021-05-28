@@ -13,6 +13,9 @@ spec:
 
   params:
   
-  - name: image-scan
-    value: vulnerables/web-dvwa:1.9  
+  - name: image-scan1
+    value: vulnerables/web-dvwa:1.9 
+    
+  - name: image-scan2
+    value: ubuntu 
   
