@@ -23,7 +23,20 @@ spec:
       image: aquasec/trivy:0.16.0
       workingDir: $(workspaces.source.path)
       script:  |
-        - trivy image $(params.image-scan)
+        
+        set -e
+               
+        echo -e "Trivy Security Scan image in registry"
+        trivy image --exit-code 0 --input ${params.image-scan}
+        trivy image --exit-code 1 --severity CRITICAL --input ${params.image-scan}
+        my_exit_code=$?
+        echo "Scan exit code :--- $my_exit_code"
+        if [ ${my_exit_code} == 1 ]; then
+            echo "Trivy scanning completed. CRITICAL Vulnerabilities found."
+            exit 1
+        else
+          echo "Trivy scanning completed. CRITICAL vulnerabilities not found."
+        
       
 
 
