@@ -6,23 +6,12 @@ spec:
   params:
     - name: image-scan
 
-    - name: testimage
+    
   workspaces:
   - name: workspace
 
   tasks:
-  - name: vulnerable-image
-    workspaces: 
-    - name: source
-      workspace: workspace
-    taskRef:
-      name: vulnerable-image
-    
-    params:
-      - name: testimage
-        value: $(params.image-scan)
-    
-    
+      
   - name: scan-image
     
     taskRef:
