@@ -13,15 +13,26 @@ spec:
       description: Workspace for fetched image.
 
   params:
-    - name: image-scan
+    - name: image-scan1
+      type: string
+      description: image to be scanned.
+      default: ""
+     
+    - name: image-scan2
       type: string
       description: image to be scanned.
       default: ""
 
   steps:
-    - name: scan-image-step
+    - name: scan-image-step1
       image: aquasec/trivy:0.16.0
       workingDir: $(workspaces.source.path)
       script:  |
-        trivy image $(params.image-scan)
+        trivy image $(params.image-scan1)
+        
+    - name: scan-image-step2
+      image: aquasec/trivy:0.16.0
+      workingDir: $(workspaces.source.path)
+      script:  |
+        trivy image $(params.image-scan2)
     
