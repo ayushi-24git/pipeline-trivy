@@ -5,14 +5,9 @@ metadata:
 spec:
   pipelineRef:
     name: scan-pipeline-image
-  
-  workspaces:
-  - name: workspace
-    persistentvolumeclaim:
-      claimName: trivypvc
 
   params:
   
   - name: image-scan
-    value: vulnerables/web-dvwa:1.9  
+    value: ""  
   
