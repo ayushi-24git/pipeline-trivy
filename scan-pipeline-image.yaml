@@ -4,7 +4,7 @@ metadata:
   name: scan-pipeline-image
 spec:
   params:
-    - name: image-scan
+  - name: image-scan
 
     
   workspaces:
