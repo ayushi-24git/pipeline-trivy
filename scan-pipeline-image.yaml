@@ -2,23 +2,15 @@ apiVersion: tekton.dev/v1alpha1
 kind: Pipeline
 metadata:
   name: scan-pipeline-image
+  
 spec:
   params:
   - name: image-scan
 
-    
-  workspaces:
-  - name: workspace
-
   tasks:
-      
   - name: scan-image
-    
     taskRef:
       name: scan-image
-    workspaces: 
-      - name: source
-        workspace: workspace
     params:
       - name: image-scan
         value: $(params.image-scan)
