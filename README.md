@@ -3,7 +3,8 @@
 Pipeline-trivy
 
 </h1>
-This repository demonstrates Trivy, a vulnerability management tool for images and containers. The elaborate working can be understood [here] (https://rastogee-ayushi.medium.com/trivy-keep-your-artifacts-vulnerability-free-6dce292134e5).  
+This repository demonstrates Trivy, a vulnerability management tool for images and containers. The elaborate working can be understood [here](https://rastogee-ayushi.medium.com/trivy-keep-your-artifacts-vulnerability-free-6dce292134e5) .  
+[I'm an inline-style link](https://www.google.com)
 
 
 The repo contains a single task, **scan-image**, which scans the given image through Trivy tool.
