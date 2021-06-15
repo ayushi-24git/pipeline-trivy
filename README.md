@@ -3,30 +3,43 @@
 Pipeline-trivy
 
 </h1>
-This repository demonstrates Trivy, a vulnerability management tool for images and containers. The elaborate working can be understood [here](https://rastogee-ayushi.medium.com/trivy-keep-your-artifacts-vulnerability-free-6dce292134e5).
+This repository demonstrates Trivy, a vulnerability management tool for images and containers. It uses Tekton pipeline under the hood.  
 
 
-The repo contains a single task, **scan-image**, which scans the given image through Trivy tool.
 
-If you have **minikube** on your laptop, do a `minikube start` and run the following commands:
+The repo contains a single task, **scan-image**, for scanning an image through Trivy. After running the pipeline, user is first asked to enter an image to be scanned. Try **vulnerables/web-dvwa:1.9**. It is a sample vulnerable image available at DockerHub. Further working of Trivy can be understood [here](https://rastogee-ayushi.medium.com/trivy-keep-your-artifacts-vulnerability-free-6dce292134e5). 
 
-<h2>Installing the tasks</h2>  
+## Setting up cluster
+Set up a cluster using minikube by doing a minikube start.
+
+## Setting up Tekton
+Install tekton with the following command after setting up the cluster
+
+kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
+
+This will install all the necessary Tekton components to get started.
+
+## Applying the Tasks and Pipeline yamls
+Apply all the mentioned tasks in the repositorry above. Example format:
+
+kubectl apply -f https://raw.githubusercontent.com/ayushi-24git/pipeline-trivy-tekton/main/tasks/scan-image.yaml
+
+Apply the pipeline yamls as:
+
+kubectl apply -f https://raw.githubusercontent.com/ayushi-24git/pipeline-trivy-tekton/scan-pipeline-image.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/ayushi-24git/pipeline-trivy-tekton/scan-pipelinerun-image.yaml
+
+Now, start the pipeline by: `tkn pipeline start scan-pipeline-image`
 
 
-  `kubectl apply -f https://raw.githubusercontent.com/ayushi-24git/pipeline-trivy/main/tasks/vulnerable-image.yaml`  
+Check logs
+Now, the pipeline has successfully started. You can check the logs using the following command:
+
+`tkn pipelinerun logs <name-of-the-pipelinerun>`
+
   
-  `kubectl apply -f https://raw.githubusercontent.com/ayushi-24git/pipeline-trivy/main/tasks/scan-image.yaml`  
-  
 
-
-<h2>Applying pipeline yamls</h2>  
-
-
-  `kubectl apply -f https://raw.githubusercontent.com/ayushi-24git/pipeline-trivy/main/pipeline.yaml`  
-  
-  `kubectl apply -f https://raw.githubusercontent.com/ayushi-24git/pipeline-trivy/main/pipelinerun.yaml`  
-  
-After applying the above, you can start the Tekton pipeline by running `tkn pipeline start scan-pipeline-image`. After this, the pipeline starts and you will be prompted to enter the image you want to scan. Try **vulnerables/web-dvwa:1.9**. It is a sample vulnerable image available at DockerHub. Check for the logs and you can see the table of all vulnerabilities detected by Trivy.
 
 
   
