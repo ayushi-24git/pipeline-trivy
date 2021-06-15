@@ -38,7 +38,7 @@ Now, the pipeline has successfully started. You can check the logs using the fol
 
 `tkn pipelinerun logs <name-of-the-pipelinerun>`
 
-You can see the table of all vulnerabilities (if any) detected by Trivy .
+You can see the table of all vulnerabilities (if any) detected by Trivy.
 
 
   
