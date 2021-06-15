@@ -18,7 +18,7 @@ spec:
 
   steps:
     - name: scan-image-step
-      image: aquasec/trivy:0.16.0
+      image: aquasec/trivy:0.18.3
       
       script:  |
         trivy image $(params.image-scan)
